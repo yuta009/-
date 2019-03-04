@@ -1,0 +1,13 @@
+td{
+  /*テーブルの線の設定
+    線の太さ　thin (薄い)
+    色：黒
+    */
+  border: solid thin black;
+ /*高さを指定　→1em:1文字の大きさ　  */
+ /*min:最小限の幅を指定(最低の大きさを設定)　大きくはなる  */
+ /*control shit d  */
+/*tdでは、heightにminをつけられない  */
+  height: 1.5em;
+  min-width: 1.5em;
+}
