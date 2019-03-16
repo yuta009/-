@@ -5,8 +5,8 @@
 const PLAYER_FIRST = 1    //プレイヤー変数（先行)
 const PLAYER_SECOND = 2   //プレイヤー変数（先行)
 let playerNow = PLAYER_FIRST  //プレイヤーターン用変数
-let i=0,j=0,c=0;  //カウント用変数
-const num=3;  //枠数　(3×3)
+let c=0;  //カウント用変数
+const FLAME_SIZE=3;  //枠数　(3×3)
 let box = [
   [null,null,null],
   [null,null,null],
@@ -37,9 +37,9 @@ function put(obj){
 
 function judg(){
   let winner = null;
-  //  勝者判定
-  for(i=0;i<num;i++){
-    for(j=0;j<num;j++){
+//  勝者判定
+  for(let i=0;i<FLAME_SIZE;i++){
+    for(let j=0;j<FLAME_SIZE;j++){
       box[i][j]=document.getElementById(`a[${i}][${j}]`).innerText;
       console.log(`取得した値：box[${i}][${j}]=`,box[i][j]);
     }
