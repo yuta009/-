@@ -5,7 +5,7 @@
 const PLAYER_FIRST = 1    //プレイヤー変数（先行)
 const PLAYER_SECOND = 2   //プレイヤー変数（先行)
 let playerNow = PLAYER_FIRST  //プレイヤーターン用変数
-let c=0;  //カウント用変数
+let drowCount=0;  //カウント用変数
 const FLAME_SIZE=3;  //枠数　(3×3)
 let box = [
   [null,null,null],
@@ -26,11 +26,11 @@ function put(obj){
   if(playerNow == PLAYER_FIRST){
     playerNow = PLAYER_SECOND
     obj.innerText="◎"
-    c+=1;
+    drowCount+=1;
   }else{
     playerNow = PLAYER_FIRST
     obj.innerText="×"
-      c+=1;
+      drowCount+=1;
   }
   judg();
 }
@@ -61,12 +61,12 @@ function judg(){
     winner = box[2][0];
   }else if(box[2][0]==box[1][1] && box[1][1]==box[0][2] && box[2][0] != ""){//斜め
     winner = box[2][0];
-  }else if(c === 9 && winner === null){
-    alert("Drow");
-    console.log("Drow");
+  }else if(drowCount === 9 && winner === null){
+    alert("Drow")
+    console.log("Drow")
   }
   if(winner !== null){
-    alert(winner + 'の勝利です');
-    console.log(winner);
+    alert(winner + 'の勝利です')
+    console.log(winner)
   }
 }
